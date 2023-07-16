@@ -1,0 +1,25 @@
+import { Flex, Text, Container } from "@chakra-ui/react";
+import ListItem from "./ListItem";
+
+
+
+function List({ dataCopy, setDataCopy }) {
+  //   console.log('dataCopy Copy: ', dataCopyCopy);
+  return (
+    <Flex
+      flexDirection={"column"}
+      alignItems={"center"}
+      justifyContent={"center"}
+      height={"75%"}
+      width={"100%"}
+    >
+      {dataCopy.length === 0 ? (
+        <Text>Empty</Text>
+      ) : (
+        <ListItem dataCopy={dataCopy} setDataCopy={setDataCopy} />
+      )}
+    </Flex>
+  );
+}
+
+export default List;
