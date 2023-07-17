@@ -19,10 +19,12 @@ import AddForm from "./components/Form/AddForm";
 
 function App() {
   const [dataCopy, setDataCopy] = useState(JSON.parse(JSON.stringify(data)));
+  const [darkTheme, setDarkTheme] = useState(true);
 
   function handlerButton() {
     alert("ddd");
   }
+
   return (
     <ChakraProvider>
       <Flex
@@ -30,6 +32,8 @@ function App() {
         justifyContent={"center"}
         w={"100vw"}
         h={"100vh"}
+        bgColor={darkTheme ? "gray.900" : ""}
+        color={darkTheme ? "gray.200" : ""}
       >
         <Flex
           flexDirection={"column"}
@@ -37,12 +41,22 @@ function App() {
           justifyContent={"center"}
           height={"100vh"}
           width={"23vw"}
-        >        
+        >
           <Text fontWeight={"bold"} fontSize={"3xl"}>
             Total: {dataCopy.length}
           </Text>
-          <AddForm dataCopy={dataCopy} setDataCopy={setDataCopy}/>
-          <List dataCopy={dataCopy} setDataCopy={setDataCopy} />
+          <AddForm
+            darkTheme={darkTheme}
+            dataCopy={dataCopy}
+            setDataCopy={setDataCopy}
+            setDarkTheme={setDarkTheme}
+          />
+          <List
+            darkTheme={darkTheme}
+            dataCopy={dataCopy}
+            setDataCopy={setDataCopy}
+            setDarkTheme={setDarkTheme}
+          />
           <ClearBtn dataCopy={dataCopy} setDataCopy={setDataCopy} />
         </Flex>
       </Flex>

@@ -1,9 +1,7 @@
 import { Flex, Text, Container } from "@chakra-ui/react";
 import ListItem from "./ListItem";
 
-
-
-function List({ dataCopy, setDataCopy }) {
+function List({ dataCopy, setDataCopy, darkTheme, setDarkTheme }) {
   //   console.log('dataCopy Copy: ', dataCopyCopy);
   return (
     <Flex
@@ -16,7 +14,12 @@ function List({ dataCopy, setDataCopy }) {
       {dataCopy.length === 0 ? (
         <Text>Empty</Text>
       ) : (
-        <ListItem dataCopy={dataCopy} setDataCopy={setDataCopy} />
+        <ListItem
+          setDataCopy={setDataCopy}
+          setDarkTheme={setDarkTheme}
+          dataCopy={dataCopy}
+          darkTheme={darkTheme}
+        />
       )}
     </Flex>
   );

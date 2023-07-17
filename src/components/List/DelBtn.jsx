@@ -14,7 +14,7 @@ function DelBtn({ dataCopy, setDataCopy, id }) {
       colorScheme="messenger"
       borderRadius={100}
     >
-      X
+      ✕
     </Button>
   );
 }

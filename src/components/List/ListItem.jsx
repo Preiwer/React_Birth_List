@@ -12,19 +12,31 @@ import {
 } from "@chakra-ui/react";
 import DelBtn from "./DelBtn";
 
-function ListItems({ dataCopy, setDataCopy }) {
+function ListItems({ dataCopy, setDataCopy, darkTheme, setDarkTheme }) {
   let dt = new Date();
 
   return (
     <>
-      <Stack boxShadow={'inset 0px 1px 7px -5px #000;'} borderRadius={'10px'} padding={2} h={'100%'} w={'100%'} overflow={'auto'} divider={<StackDivider />}>
+      <Stack
+        boxShadow={
+          darkTheme
+            ? "inset 0px 1px 7px -5px var(--chakra-colors-gray-200);"
+            : "inset 0px 1px 7px -5px #000;"
+        }
+        borderRadius={"10px"}
+        padding={2}
+        h={"100%"}
+        w={"100%"}
+        overflow={"auto"}
+        divider={<StackDivider />}
+      >
         {dataCopy.map((el, idx) => (
           <Flex
             key={el.id}
             alignItems={"center"}
             justifyContent={"space-between"}
             gap={2}
-            w={'100%'}  
+            w={"100%"}
           >
             <Wrap>
               <WrapItem>
